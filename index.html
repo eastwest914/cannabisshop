@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnyWeed — Cannabis Shop in München</title>
+<meta name="description" content="AnyWeed is a Cannabis Shop, CBD Shop & Hemp Store in Munich, Germany. Quality cannabis products, CBD flowers, hemp goods and head shop supplies at Westenriederstraße 8.">
+<meta name="keywords" content="Cannabis Shop, Cannabis Store, Weed Shop, Weed Store, CBD Shop, CBD Store, Hemp Shop, Hemp Store, Smoke Shop">
+<meta property="og:title" content="AnyWeed — Cannabis Shop in München">
+<meta property="og:description" content="Cannabis Shop, CBD Shop & Hemp Store in Munich. Quality products, knowledgeable staff, welcoming vibe.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anyweed.com/">
+<link rel="icon" href="https://scontent.fisb10-1.fna.fbcdn.net/v/t39.30808-6/716762804_122161116440958652_9163564361940846391_n.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#1F3D2B;
+    --green-forest:#2C5138;
+    --sage:#8FAE8B;
+    --cream:#F6F2E7;
+    --paper:#FBF9F3;
+    --amber:#C17F3E;
+    --amber-dark:#A8672E;
+    --ink:#22261F;
+    --line: rgba(34,38,31,0.12);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--green-deep);
+    margin:0 0 .5em 0;
+    line-height:1.15;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.75rem;
+    font-weight:600;
+    color:var(--amber-dark);
+    margin-bottom:.6em;
+    display:inline-block;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:.95rem;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    border:1.5px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--amber); color:#fff;}
+  .btn-primary:hover{background:var(--amber-dark); transform:translateY(-2px); box-shadow:0 10px 20px rgba(193,127,62,.28);}
+  .btn-ghost{border-color:rgba(255,255,255,.55); color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,.12); transform:translateY(-2px);}
+  .btn-outline{border-color:var(--green-deep); color:var(--green-deep);}
+  .btn-outline:hover{background:var(--green-deep); color:#fff;}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(31,61,43,.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex; align-items:center; gap:12px; color:#fff;}
+  .brand img{
+    width:44px; height:44px; border-radius:10px; object-fit:cover;
+    border:1.5px solid rgba(255,255,255,.35);
+  }
+  .brand-name{font-family:'Fraunces', serif; font-size:1.25rem; font-weight:600; color:#fff;}
+  .brand-tag{font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage);}
+  nav.links{display:flex; align-items:center; gap:28px;}
+  nav.links a.navlink{color:rgba(255,255,255,.85); font-size:.92rem; font-weight:500;}
+  nav.links a.navlink:hover{color:#fff;}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .menu-toggle{display:none; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg, var(--green-deep) 0%, var(--green-forest) 55%, #3a6b47 100%);
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image: radial-gradient(circle at 82% 20%, rgba(143,174,139,.35), transparent 45%),
+                       radial-gradient(circle at 8% 85%, rgba(193,127,62,.25), transparent 40%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    display:grid; grid-template-columns: 1.1fr .9fr; gap:48px;
+    align-items:center;
+    padding:88px 0 72px;
+  }
+  .hero h1{color:#fff; font-size:clamp(2.1rem, 4.2vw, 3.3rem); max-width:12ch;}
+  .hero p.lead{color:rgba(255,255,255,.86); font-size:1.08rem; max-width:46ch; margin:0 0 1.8em;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:28px;}
+  .hero-meta{display:flex; gap:26px; flex-wrap:wrap; font-size:.88rem; color:rgba(255,255,255,.75);}
+  .hero-meta strong{display:block; color:#fff; font-weight:600; font-size:.95rem;}
+  .hero-visual{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.15);
+    aspect-ratio: 4/5;
+  }
+  .hero-visual img{width:100%; height:100%; object-fit:cover;}
+  .hero-badge{
+    position:absolute; left:-18px; bottom:22px;
+    background:var(--amber);
+    color:#fff;
+    padding:14px 20px;
+    border-radius:14px;
+    box-shadow:0 14px 30px rgba(0,0,0,.3);
+    font-family:'Fraunces', serif;
+    max-width:210px;
+  }
+  .hero-badge .num{font-size:1.5rem; font-weight:600; line-height:1;}
+  .hero-badge .cap{font-family:'Work Sans',sans-serif; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; opacity:.92;}
+
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin:0 auto 48px; text-align:center;}
+  .section-head p{color:#5b5f52; font-size:1.02rem;}
+  .section-head.left{margin:0 0 40px; text-align:left;}
+
+  /* About */
+  .about{background:var(--cream);}
+  .about-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:56px; align-items:center;}
+  .about-media{border-radius:20px; overflow:hidden; box-shadow:0 20px 45px rgba(31,61,43,.18);}
+  .about-media img{width:100%; height:100%; object-fit:cover; aspect-ratio: 4/3;}
+  .about-list{list-style:none; padding:0; margin:22px 0 0;}
+  .about-list li{
+    display:flex; gap:12px; align-items:flex-start;
+    padding:10px 0; border-top:1px solid var(--line);
+    font-size:.98rem; color:var(--ink);
+  }
+  .about-list li:first-child{border-top:none;}
+  .about-list .dot{
+    flex:0 0 auto; width:22px; height:22px; border-radius:50%;
+    background:var(--green-deep); color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:.72rem; margin-top:2px;
+  }
+
+  /* Services */
+  .services{background:var(--paper);}
+  .card-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 26px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-6px); box-shadow:0 18px 36px rgba(31,61,43,.14);}
+  .card .icon{
+    width:48px; height:48px; border-radius:12px;
+    background:var(--green-deep); color:var(--sage);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:16px; font-size:1.3rem;
+  }
+  .card h3{font-size:1.15rem; margin-bottom:.4em;}
+  .card p{color:#5b5f52; font-size:.94rem; margin:0;}
+
+  /* Why choose */
+  .why{
+    background:linear-gradient(160deg, var(--green-deep), var(--green-forest));
+    color:#fff;
+  }
+  .why .section-head p{color:rgba(255,255,255,.78);}
+  .why .section-head h2{color:#fff;}
+  .why-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:22px;}
+  .why-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:26px 22px;
+  }
+  .why-card .n{font-family:'Fraunces',serif; font-size:1.6rem; color:var(--sage); margin-bottom:8px;}
+  .why-card h4{color:#fff; font-size:1.05rem; margin-bottom:.4em;}
+  .why-card p{color:rgba(255,255,255,.78); font-size:.9rem; margin:0;}
+
+  /* FAQ */
+  .faq{background:var(--cream);}
+  .faq-list{max-width:820px; margin:0 auto;}
+  details{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 24px;
+    margin-bottom:14px;
+  }
+  details[open]{border-color:var(--sage);}
+  summary{
+    cursor:pointer;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--green-deep);
+    list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; font-size:1.4rem; color:var(--amber); flex:0 0 auto;}
+  details[open] summary::after{content:"–";}
+  details p{color:#5b5f52; margin:14px 0 0; font-size:.96rem;}
+
+  /* Contact */
+  .contact{background:var(--paper);}
+  .contact-grid{display:grid; grid-template-columns: 1fr 1.1fr; gap:44px; align-items:stretch;}
+  .contact-card{
+    background:var(--green-deep);
+    color:#fff;
+    border-radius:20px;
+    padding:38px 34px;
+  }
+  .contact-card h2{color:#fff;}
+  .contact-row{
+    display:flex; gap:14px; padding:14px 0; border-top:1px solid rgba(255,255,255,.14);
+  }
+  .contact-row:first-of-type{border-top:none;}
+  .contact-row .label{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--sage); margin-bottom:2px;}
+  .contact-row .val{font-size:.98rem; color:#fff;}
+  .contact-row .val a{border-bottom:1px solid rgba(255,255,255,.4);}
+  .social-row{display:flex; gap:12px; margin-top:24px;}
+  .social-row a{
+    width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,.35);
+    display:flex; align-items:center; justify-content:center; font-size:.9rem;
+  }
+  .social-row a:hover{background:rgba(255,255,255,.14);}
+  .map-frame{border-radius:20px; overflow:hidden; border:1px solid var(--line); min-height:100%; box-shadow:0 20px 45px rgba(31,61,43,.14);}
+  .map-frame iframe{width:100%; height:100%; min-height:420px; border:0; display:block;}
+
+  /* Keywords / footer */
+  .keywords{
+    background:var(--cream);
+    border-top:1px solid var(--line);
+    padding:34px 0;
+  }
+  .keywords .wrap{display:flex; flex-wrap:wrap; gap:10px; justify-content:center;}
+  .keywords span{
+    font-size:.82rem; color:var(--green-deep);
+    background:#fff; border:1px solid var(--line);
+    padding:7px 16px; border-radius:999px;
+  }
+  footer{
+    background:var(--green-deep); color:rgba(255,255,255,.7);
+    padding:26px 0; text-align:center; font-size:.86rem;
+  }
+  footer a{color:var(--sage);}
+
+  @media (max-width: 880px){
+    nav.links{display:none;}
+    .menu-toggle{display:block;}
+    .hero-inner{grid-template-columns:1fr; padding-top:52px;}
+    .hero-visual{order:-1; aspect-ratio:16/10;}
+    .hero-badge{left:14px; bottom:-18px;}
+    .about-grid{grid-template-columns:1fr;}
+    .card-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .map-frame iframe{min-height:320px;}
+  }
+  @media (max-width: 560px){
+    .card-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .hero-inner{padding-bottom:56px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+  a:focus-visible, button:focus-visible, summary:focus-visible{
+    outline:2px solid var(--amber); outline-offset:3px;
+  }
+  a.kw-link{
+    color:var(--amber-dark);
+    font-weight:600;
+    text-decoration:underline;
+    text-decoration-color:rgba(193,127,62,.5);
+    text-underline-offset:2px;
+  }
+  a.kw-link:hover{color:var(--amber);}
+  .why-card a.kw-link, .contact-card a.kw-link{color:var(--sage); text-decoration-color:rgba(143,174,139,.6);}
+  .why-card a.kw-link:hover, .contact-card a.kw-link:hover{color:#fff;}
+  .hero p.lead a.kw-link{color:var(--sage); text-decoration-color:rgba(143,174,139,.6);}
+  .hero p.lead a.kw-link:hover{color:#fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <img src="https://scontent.fisb10-1.fna.fbcdn.net/v/t39.30808-6/716762804_122161116440958652_9163564361940846391_n.jpg" alt="AnyWeed logo">
+      <span>
+        <span class="brand-name" style="display:block;">AnyWeed</span>
+        <span class="brand-tag">Cannabis Shop · München</span>
+      </span>
+    </a>
+    <nav class="links">
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#why">Why Us</a>
+      <a class="navlink" href="#faq">FAQ</a>
+      <a class="navlink" href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+4915229607756">Call +49 152 29607756</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow" style="color:var(--sage);">Munich's Neighborhood Cannabis Shop</span>
+      <h1>Quality cannabis, CBD & hemp — chosen and explained by people who know it</h1>
+      <p class="lead">AnyWeed is a <a class="kw-link" href="https://anyweed.com/">Cannabis Shop</a> and Head Shop in the heart of München, stocking cannabis flowers, CBD products, hemp goods and smoke shop essentials — all selected for quality and backed by staff who take the time to help you choose right.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Visit the Shop</a>
+        <a class="btn btn-ghost" href="#services">Browse Our Range</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Westenriederstraße 8</strong>80331 München, Germany</div>
+        <div><strong>+49 152 29607756</strong>Call or WhatsApp</div>
+        <div><strong>anyweed.com</strong>Shop info online</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://scontent.fisb10-1.fna.fbcdn.net/v/t39.30808-6/713763333_122101446759349600_3340735500143711745_n.jpg" alt="AnyWeed cannabis shop interior">
+      <div class="hero-badge">
+        <div class="num">100%</div>
+        <div class="cap">Quality Checked Products</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media">
+      <img src="https://scontent.fisb10-1.fna.fbcdn.net/v/t39.30808-6/713763333_122101446759349600_3340735500143711745_n.jpg" alt="Inside AnyWeed cannabis and CBD shop in Munich">
+    </div>
+    <div>
+      <span class="eyebrow">About Us</span>
+      <h2>AnyWeed — a Cannabis Shop built on quality and honest advice</h2>
+      <p><strong>AnyWeed</strong> is a <a class="kw-link" href="https://anyweed.com/">Cannabis Store</a>, CBD Shop and Hemp Store located at Westenriederstraße 8 in München. We bring together cannabis flowers, CBD products, hemp goods and a full head shop selection under one roof, curated for people who care about what they're buying.</p>
+      <p>Our team is here to answer questions, explain <a class="kw-link" href="https://anyweed.com/">Cannabis Products</a> clearly, and point you toward what actually suits you — whether you're new to the category or know exactly what you're after.</p>
+      <ul class="about-list">
+        <li><span class="dot">✓</span> Carefully selected cannabis, CBD & hemp products</li>
+        <li><span class="dot">✓</span> Knowledgeable, friendly staff on hand</li>
+        <li><span class="dot">✓</span> Central München location, easy to reach</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Our Services</h2>
+      <p>Everything you need in one Cannabis Shop — from flowers to accessories — with staff who know the products inside out.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon">🌿</div>
+        <h3>Cannabis Flowers</h3>
+        <p>A curated selection of <a class="kw-link" href="https://anyweed.com/">Cannabis Flowers</a>, chosen for quality and freshness, with staff on hand to talk you through strains and strength.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💧</div>
+        <h3>CBD Products</h3>
+        <p>Oils, flowers and everyday <a class="kw-link" href="https://anyweed.com/">CBD Products</a> for people looking for a non-intoxicating option, all clearly labelled and easy to compare.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌾</div>
+        <h3>Hemp Products</h3>
+        <p>A full range of <a class="kw-link" href="https://anyweed.com/">Hemp Products</a>, from raw hemp flower to hemp textiles and wellness items sourced from trusted suppliers.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Head Shop Essentials</h3>
+        <p>Pipes, papers, grinders and other <a class="kw-link" href="https://anyweed.com/">Smoke Shop</a> accessories — quality gear for anyone who wants their setup done right.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧑‍🌾</div>
+        <h3>CBD Flowers</h3>
+        <p>Premium <a class="kw-link" href="https://anyweed.com/">CBD Flowers</a> selections, hand-picked for aroma and quality, ideal for those exploring the CBD side of the shelf.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛍️</div>
+        <h3>In-Store Guidance</h3>
+        <p>Not sure where to start? Our team walks you through the <a class="kw-link" href="https://anyweed.com/">Head Shop</a>, answers questions honestly, and helps you find the right fit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--sage);">Why Choose Us</span>
+      <h2>Why Choose AnyWeed?</h2>
+      <p>A Cannabis Shop that Munich locals come back to — here's what sets us apart.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="n">01</div>
+        <h4>Quality First</h4>
+        <p>Every product on our shelves is chosen for quality, not just availability — <a class="kw-link" href="https://anyweed.com/">Weed Shop</a> staples, CBD and hemp alike.</p>
+      </div>
+      <div class="why-card">
+        <div class="n">02</div>
+        <h4>Real Expertise</h4>
+        <p>Our staff know the <a class="kw-link" href="https://anyweed.com/">CBD Shop</a> and cannabis range inside out, so you always leave with what actually suits you.</p>
+      </div>
+      <div class="why-card">
+        <div class="n">03</div>
+        <h4>Central Location</h4>
+        <p>Right on Westenriederstraße in München, our <a class="kw-link" href="https://anyweed.com/">Hemp Shop</a> is easy to find and easy to visit whenever you need us.</p>
+      </div>
+      <div class="why-card">
+        <div class="n">04</div>
+        <h4>Friendly, No-Pressure Service</h4>
+        <p>Browse our <a class="kw-link" href="https://anyweed.com/">Weed Store</a> at your own pace. We're here to help when you want it, not to push you toward anything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about shopping at AnyWeed, our Cannabis Shop in München.</p>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>What can I buy at AnyWeed?</summary>
+        <p>AnyWeed is a <a class="kw-link" href="https://anyweed.com/">CBD Store</a> and Head Shop offering cannabis flowers, CBD products, CBD flowers, hemp products and smoke shop accessories such as pipes, papers and grinders.</p>
+      </details>
+      <details>
+        <summary>Do I need to know exactly what I want before I visit?</summary>
+        <p>Not at all. Our <a class="kw-link" href="https://anyweed.com/">Hemp Store</a> team is happy to explain the difference between products, walk you through the range, and help you find something that fits what you're looking for.</p>
+      </details>
+      <details>
+        <summary>Where is AnyWeed located?</summary>
+        <p>Our <a class="kw-link" href="https://anyweed.com/">Cannabis Shop</a> is located at Westenriederstraße 8, 80331 München, Germany — a short walk from the city center, easy to reach on foot or by public transport.</p>
+      </details>
+      <details>
+        <summary>What's the difference between your CBD and cannabis products?</summary>
+        <p>Broadly, <a class="kw-link" href="https://anyweed.com/">CBD Products</a> are non-intoxicating and chosen for their wellness qualities, while our cannabis flowers are selected for strength and character. Our staff can explain each product on the shelf in more detail.</p>
+      </details>
+      <details>
+        <summary>How can I contact AnyWeed or check opening hours?</summary>
+        <p>Call or message us at +49 152 29607756, visit our <a class="kw-link" href="https://anyweed.com/">Weed Shop</a> website, or stop by the shop directly at Westenriederstraße 8, 80331 München.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-card">
+      <span class="eyebrow" style="color:var(--sage);">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <div class="contact-row">
+        <div>
+          <div class="label">Business Name</div>
+          <div class="val">AnyWeed — Cannabis Shop</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div>
+          <div class="label">Address</div>
+          <div class="val">Westenriederstraße 8, 80331 München, Germany</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div>
+          <div class="label">Phone</div>
+          <div class="val"><a href="tel:+4915229607756">+49 152 29607756</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div>
+          <div class="label">Website</div>
+          <div class="val"><a href="https://anyweed.com/" target="_blank" rel="noopener">anyweed.com</a></div>
+        </div>
+      </div>
+      <div class="social-row">
+        <a href="https://www.google.com/maps?cid=7065732329787811286" target="_blank" rel="noopener" aria-label="View on Google Maps">📍</a>
+        <a href="tel:+4915229607756" aria-label="Call AnyWeed">📞</a>
+        <a href="https://anyweed.com/" target="_blank" rel="noopener" aria-label="Visit AnyWeed website">🌐</a>
+      </div>
+    </div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.721067463874!2d11.577831500000002!3d48.1349023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e7530159be6db%3A0x620e861e3afee5d6!2sAnyWeed!5e0!3m2!1sen!2s!4v1787585454574!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="AnyWeed location map"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="keywords">
+  <div class="wrap">
+    <span>Cannabis Shop</span>
+    <span>Cannabis Store</span>
+    <span>Weed Shop</span>
+    <span>Weed Store</span>
+    <span>CBD Shop</span>
+    <span>CBD Store</span>
+    <span>Hemp Shop</span>
+    <span>Hemp Store</span>
+    <span>Smoke Shop</span>
+    <span>Head Shop</span>
+    <span>Cannabis Products</span>
+    <span>CBD Products</span>
+    <span>Hemp Products</span>
+    <span>Cannabis Flowers</span>
+    <span>CBD Flowers</span>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> AnyWeed — All Rights Reserved. | Westenriederstraße 8, 80331 München, Germany | <a href="tel:+4915229607756">+49 152 29607756</a> | <a href="https://anyweed.com/" target="_blank" rel="noopener">anyweed.com</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
